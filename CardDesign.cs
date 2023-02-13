@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace CARDMAKER
 {
@@ -105,7 +106,23 @@ namespace CARDMAKER
         {
 
         }
-
+        private void savedesign()
+        {
+            try
+            {
+                using (SqlConnection conn = CONNECTION.CONN())
+                {
+                    string query = "INSERT INTO [dbo].[Designs] ([DesignName]) values (@DesignName)";
+                    SqlCommand cmd1 = new SqlCommand(query, conn);
+                    cmd1.Parameters.AddWithValue("@DesignName", TxtDesignName.Text);
+                    cmd1.ExecuteNonQuery();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -142,6 +159,8 @@ namespace CARDMAKER
                         cmd.Parameters.AddWithValue("@DesignName", TxtDesignName.Text);
 
                         cmd.ExecuteNonQuery();
+
+                        savedesign();
                         MessageBox.Show("Saved successfully");
                     }
                 }
@@ -192,6 +211,18 @@ namespace CARDMAKER
                         string footercolor = reader["FooterColor"].ToString();
                         panel2.BackColor = System.Drawing.Color.FromName(titlecolor);
                         panel3.BackColor = System.Drawing.Color.FromName(footercolor);
+                        string BackgroundFrontPath = reader["BackgroundFrontPath"].ToString();
+                        string Backgroudimage1 = reader["BackgroundBackPath"].ToString();
+                        Image image = Image.FromFile(BackgroundFrontPath);
+
+                        Image image1 = Image.FromFile(Backgroudimage1);
+
+                        panel1.BackgroundImage = image;
+
+                        panel4.BackgroundImage = image1;
+
+                        panel5.BackColor = System.Drawing.Color.FromName(footercolor);
+
                         LblBox.Hide();
                         LblLocation.Hide();
                     }
@@ -199,8 +230,8 @@ namespace CARDMAKER
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
-                return;
+                //MessageBox.Show(ex.Message);
+                //return;
             }
         }
 

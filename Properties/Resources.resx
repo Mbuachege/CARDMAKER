@@ -124,8 +124,8 @@
   <data name="chegembuaQR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chegembuaQR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="24-248669_login-add-user-new-team-member-icon-hd" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\24-248669_login-add-user-new-team-member-icon-hd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="icons8-business-report-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons8-business-report-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="add-insert-blue-icon-symbol-download-png-116396096809b8kzdrvvr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\add-insert-blue-icon-symbol-download-png-116396096809b8kzdrvvr.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,8 +166,11 @@
   <data name="icons8-human-67" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-human-67.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons8-business-report-50" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons8-business-report-50.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="24-248669_login-add-user-new-team-member-icon-hd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\24-248669_login-add-user-new-team-member-icon-hd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icons8-spreadsheet-16" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-spreadsheet-16.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,7 +187,7 @@
   <data name="icons8-add-48 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8-add-48 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="pic" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\pic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

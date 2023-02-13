@@ -201,7 +201,7 @@ namespace CARDMAKER
                 document.Add(jpg);
 
                 Color bgColour1 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
-                Paragraph paragraph1 = new Paragraph("MURANGAUNIVERSITYKENYA").SetFirstLineIndent(42).SetFont(NewRoman).SetFontSize(14).SetMarginLeft(0).SetMarginTop(0).SetBackgroundColor(bgColour1).SetWidth(myWidth).SetPaddingLeft(0).SetHeight(27f).SetPadding(0);
+                Paragraph paragraph1 = new Paragraph(Institution).SetFirstLineIndent(42).SetFont(NewRoman).SetFontSize(13).SetMarginLeft(0).SetMarginTop(0).SetBackgroundColor(bgColour1).SetWidth(myWidth).SetPaddingLeft(0).SetHeight(27f).SetPadding(0);
                 document.Add(paragraph1);
 
 
@@ -245,7 +245,7 @@ namespace CARDMAKER
 
                 var timesNewRoman = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
                 var P1 = new Paragraph();
-                P1.SetFont(timesNewRoman);
+                P1.SetFont(NewRoman);
                 P1.SetWidth(myWidth);
                 P1.SetFontSize(11).SetPaddingTop(0).SetMarginBottom(0).SetMarginTop(18);
                 P1.SetTextAlignment(TextAlignment.JUSTIFIED_ALL);
@@ -297,9 +297,9 @@ namespace CARDMAKER
 
                 var timesNewRoman1 = PdfFontFactory.CreateFont(StandardFonts.TIMES_ROMAN);
                 var para6 = new Paragraph();
-                para6.SetFont(timesNewRoman1);
+                para6.SetFont(NewRoman);
                 para6.SetWidth(myWidth).SetHeight(24f);
-                para6.SetFontSize(11).SetPaddingTop(0).SetMarginBottom(0).SetMarginTop(19);
+                para6.SetFontSize(12).SetPaddingTop(0).SetMarginBottom(0).SetMarginTop(19);
                 para6.SetTextAlignment(TextAlignment.JUSTIFIED_ALL);
                 Color bgColour2 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
                 para6.SetFontColor(ColorConstants.BLACK);

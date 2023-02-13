@@ -95,11 +95,12 @@ namespace CARDMAKER
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -110,11 +111,12 @@ namespace CARDMAKER
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -542,6 +544,7 @@ namespace CARDMAKER
             // 
             // panel1
             // 
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.LblLocation);
             this.panel1.Controls.Add(this.LblBox);
@@ -692,6 +695,7 @@ namespace CARDMAKER
             this.LbLMotto.Size = new System.Drawing.Size(301, 18);
             this.LbLMotto.TabIndex = 13;
             this.LbLMotto.Text = "MOTTO: COMMITED TO EXCELENCE";
+            this.LbLMotto.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
@@ -715,9 +719,10 @@ namespace CARDMAKER
             // 
             // panel4
             // 
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.panel5);
             this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.LblBackNote);
             this.panel4.Controls.Add(this.LbLBackTopNote);
             this.panel4.Controls.Add(this.textBox15);
             this.panel4.Controls.Add(this.textBox16);
@@ -733,11 +738,12 @@ namespace CARDMAKER
             // 
             this.LblBackNote.AutoSize = true;
             this.LblBackNote.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LblBackNote.Location = new System.Drawing.Point(49, 244);
+            this.LblBackNote.Location = new System.Drawing.Point(78, 8);
             this.LblBackNote.Name = "LblBackNote";
             this.LblBackNote.Size = new System.Drawing.Size(354, 18);
             this.LblBackNote.TabIndex = 13;
             this.LblBackNote.Text = "THIS CARD BELONGS TO THE INSTITUTION";
+            this.LblBackNote.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // LbLBackTopNote
             // 
@@ -796,10 +802,23 @@ namespace CARDMAKER
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel5.Controls.Add(this.LblBackNote);
+            this.panel5.Location = new System.Drawing.Point(-1, 235);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(507, 31);
+            this.panel5.TabIndex = 14;
+            // 
             // pictureBox2
             // 
-            this.pictureBox2.Image = global::CARDMAKER.Properties.Resources.icons8_human_67;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 92);
+            this.pictureBox2.Image = global::CARDMAKER.Properties.Resources.pic;
+            this.pictureBox2.Location = new System.Drawing.Point(4, 86);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(173, 139);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -836,10 +855,6 @@ namespace CARDMAKER
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // CardDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -866,11 +881,13 @@ namespace CARDMAKER
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -947,5 +964,6 @@ namespace CARDMAKER
         public System.Windows.Forms.TextBox TxtBackgroungImageback;
         public System.Windows.Forms.TextBox TxtDesignName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Panel panel5;
     }
 }
