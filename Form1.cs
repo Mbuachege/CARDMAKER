@@ -41,5 +41,10 @@ namespace CARDMAKER
         {
             Application.Exit();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+          // panel1.BackColor = Color.FromArgb(100, 0, 0, 0);
+        }
     }
 }

@@ -273,6 +273,16 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap pc_accessories_category_OGimage {
+            get {
+                object obj = ResourceManager.GetObject("pc-accessories-category-OGimage", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pic {
             get {
                 object obj = ResourceManager.GetObject("pic", resourceCulture);
@@ -286,6 +296,16 @@ namespace CARDMAKER.Properties {
         internal static System.Drawing.Bitmap qr2 {
             get {
                 object obj = ResourceManager.GetObject("qr2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sailing_boat_gd2103c0d0_1920 {
+            get {
+                object obj = ResourceManager.GetObject("sailing-boat-gd2103c0d0_1920", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
