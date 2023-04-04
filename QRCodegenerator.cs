@@ -23,6 +23,7 @@ namespace CARDMAKER
         string outputFileName;
         string Namee;
         string RegNo;
+        string qrnumber;
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -78,34 +79,39 @@ namespace CARDMAKER
                         RegNo = dataReader["RegNo"].ToString();
                         QRCodeGenerator qr = new QRCodeGenerator();
                         byte[] img = null;
+                        Random rnd = new Random();
 
-                        QRCodeData qRCodeData = qr.CreateQrCode(Namee + RegNo, QRCodeGenerator.ECCLevel.Q);
-
-                        QRCode Qcode = new QRCode(qRCodeData);
-                        using (Bitmap bitmap = Qcode.GetGraphic(15))
+                        for (int j = 0; j < 1; j++)
                         {
-                            using (MemoryStream ms = new MemoryStream())
+                            qrnumber = rnd.Next().ToString();
+
+                            QRCodeData qRCodeData = qr.CreateQrCode(qrnumber, QRCodeGenerator.ECCLevel.Q);
+                            QRCode Qcode = new QRCode(qRCodeData);
+
+                            using (Bitmap bitmap = Qcode.GetGraphic(15))
                             {
+                                using (MemoryStream ms = new MemoryStream())
+                                {
 
-                                bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                                Color backColor = bitmap.GetPixel(0, 0);
-                                bitmap.MakeTransparent();
+                                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                                    Color backColor = bitmap.GetPixel(0, 0);
+                                    bitmap.MakeTransparent();
 
-                                img = new byte[ms.ToArray().Length];
-                                img = ms.ToArray();
+                                    img = new byte[ms.ToArray().Length];
+                                    img = ms.ToArray();
 
-                                outputFileName = @"C:\Users\ADMIN\Downloads\" + Namee + ".png";
+                                    outputFileName = @"C:\Users\ADMIN\Downloads\" + qrnumber + ".png";
 
-                                FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite);
-                                bitmap.Save(ms, ImageFormat.Jpeg);
-                                // memory.ToStream(fs) // I think the same
-                                byte[] bytes = ms.ToArray();
-                                fs.Write(bytes, 0, bytes.Length);
+                                    FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite);
+                                    bitmap.Save(ms, ImageFormat.Jpeg);
+                                    // memory.ToStream(fs) // I think the same
+                                    byte[] bytes = ms.ToArray();
+                                    fs.Write(bytes, 0, bytes.Length);
 
-                                saveqrcodes();
+                                    saveqrcodes();
+                                }
                             }
                         }
-
                     }
 
                 }
@@ -120,7 +126,7 @@ namespace CARDMAKER
         {
             using (SqlConnection conn = CONNECTION.CONN())
             {
-                SqlCommand cmd = new SqlCommand("SELECT [Name],[RegNo],[QrCodePath]  FROM [dbo].[ImportData] WHERE [ImportName] = '"+CmbImportedTable.Text +"'", conn)
+                SqlCommand cmd = new SqlCommand("SELECT [Name],[RegNo],[QrCodePath],[QrCode] FROM [dbo].[ImportData] WHERE [ImportName] = '" + CmbImportedTable.Text +"'", conn)
                 {
                     CommandType = CommandType.Text
                 };
@@ -138,11 +144,11 @@ namespace CARDMAKER
             using (SqlConnection sqlConnection = CONNECTION.CONN())
             {
 
-                string query = "UPDATE [dbo].[ImportData] SET [QrCodePath] = @QrPath WHERE [RegNo] = '" + RegNo +"'";
+                string query = "UPDATE [dbo].[ImportData] SET [QrCodePath] = @QrPath, [QrCode] = @Qrcode WHERE [RegNo] = '" + RegNo +"'";
                 SqlCommand cmd = new SqlCommand(query, sqlConnection);
 
                 cmd.Parameters.AddWithValue("@QrPath", outputFileName.ToString());
-
+                cmd.Parameters.AddWithValue("@Qrcode", qrnumber);
                 cmd.ExecuteNonQuery();
             }
         }

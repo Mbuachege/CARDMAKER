@@ -37,7 +37,9 @@ namespace CARDMAKER
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.dataGridView1.Location = new System.Drawing.Point(23, 50);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(829, 327);
@@ -45,7 +47,7 @@ namespace CARDMAKER
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(330, 12);
+            this.button1.Location = new System.Drawing.Point(317, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 31);
             this.button1.TabIndex = 2;
@@ -56,9 +58,9 @@ namespace CARDMAKER
             // CmbImportedTable
             // 
             this.CmbImportedTable.FormattingEnabled = true;
-            this.CmbImportedTable.Location = new System.Drawing.Point(79, 13);
+            this.CmbImportedTable.Location = new System.Drawing.Point(80, 18);
             this.CmbImportedTable.Name = "CmbImportedTable";
-            this.CmbImportedTable.Size = new System.Drawing.Size(208, 21);
+            this.CmbImportedTable.Size = new System.Drawing.Size(221, 21);
             this.CmbImportedTable.TabIndex = 3;
             this.CmbImportedTable.SelectedIndexChanged += new System.EventHandler(this.CmbImportedTable_SelectedIndexChanged);
             // 
@@ -66,6 +68,7 @@ namespace CARDMAKER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(870, 388);
             this.Controls.Add(this.CmbImportedTable);
             this.Controls.Add(this.button1);

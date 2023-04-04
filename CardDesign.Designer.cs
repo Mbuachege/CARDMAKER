@@ -32,6 +32,7 @@ namespace CARDMAKER
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.TxtDesignName = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
@@ -88,19 +89,21 @@ namespace CARDMAKER
             this.panel2 = new System.Windows.Forms.Panel();
             this.LblInstitution = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.LblBackNote = new System.Windows.Forms.Label();
             this.LbLBackTopNote = new System.Windows.Forms.Label();
             this.textBox15 = new System.Windows.Forms.TextBox();
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.textBox17 = new System.Windows.Forms.TextBox();
             this.textBox18 = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.panel5 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -111,12 +114,13 @@ namespace CARDMAKER
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.panel7.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -131,6 +135,8 @@ namespace CARDMAKER
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.Beige;
+            this.tabPage1.Controls.Add(this.panel6);
             this.tabPage1.Controls.Add(this.button5);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.label11);
@@ -151,10 +157,23 @@ namespace CARDMAKER
             this.tabPage1.Size = new System.Drawing.Size(1164, 427);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Card Details";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Location = new System.Drawing.Point(740, 253);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 38);
+            this.button5.TabIndex = 40;
+            this.button5.Text = "Cancel";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click_1);
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.TxtDesignName);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Location = new System.Drawing.Point(746, 147);
@@ -257,26 +276,33 @@ namespace CARDMAKER
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Location = new System.Drawing.Point(574, 253);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 38);
             this.button2.TabIndex = 2;
             this.button2.Text = "Update";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Location = new System.Drawing.Point(424, 253);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 38);
             this.button1.TabIndex = 1;
             this.button1.Text = "SAVE";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label19);
@@ -415,6 +441,7 @@ namespace CARDMAKER
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.linkLabel2);
             this.groupBox2.Controls.Add(this.ImportSignature);
             this.groupBox2.Controls.Add(this.TxtBackgroungImageback);
@@ -509,6 +536,8 @@ namespace CARDMAKER
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.Beige;
+            this.tabPage2.Controls.Add(this.panel7);
             this.tabPage2.Controls.Add(this.button7);
             this.tabPage2.Controls.Add(this.CmbDesign);
             this.tabPage2.Controls.Add(this.panel1);
@@ -519,12 +548,11 @@ namespace CARDMAKER
             this.tabPage2.Size = new System.Drawing.Size(1164, 427);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Preview Design";
-            this.tabPage2.UseVisualStyleBackColor = true;
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(271, 33);
+            this.button7.Location = new System.Drawing.Point(281, 52);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(111, 23);
             this.button7.TabIndex = 4;
@@ -535,7 +563,7 @@ namespace CARDMAKER
             // CmbDesign
             // 
             this.CmbDesign.FormattingEnabled = true;
-            this.CmbDesign.Location = new System.Drawing.Point(37, 35);
+            this.CmbDesign.Location = new System.Drawing.Point(26, 52);
             this.CmbDesign.Name = "CmbDesign";
             this.CmbDesign.Size = new System.Drawing.Size(228, 21);
             this.CmbDesign.TabIndex = 3;
@@ -619,18 +647,18 @@ namespace CARDMAKER
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(373, 188);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(53, 13);
+            this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 10;
-            this.label3.Text = "RegNo??";
+            this.label3.Text = "PhoneNo";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(373, 156);
+            this.label2.Location = new System.Drawing.Point(373, 152);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
+            this.label2.Size = new System.Drawing.Size(62, 13);
             this.label2.TabIndex = 9;
-            this.label2.Text = "RegNo??";
+            this.label2.Text = "Department";
             // 
             // label1
             // 
@@ -734,6 +762,15 @@ namespace CARDMAKER
             this.panel4.Size = new System.Drawing.Size(507, 268);
             this.panel4.TabIndex = 1;
             // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Aquamarine;
+            this.panel5.Controls.Add(this.LblBackNote);
+            this.panel5.Location = new System.Drawing.Point(-1, 235);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(507, 31);
+            this.panel5.TabIndex = 14;
+            // 
             // LblBackNote
             // 
             this.LblBackNote.AutoSize = true;
@@ -792,28 +829,9 @@ namespace CARDMAKER
             this.textBox18.TabIndex = 1;
             this.textBox18.Text = "REG NO:";
             // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(740, 253);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 38);
-            this.button5.TabIndex = 40;
-            this.button5.Text = "Cancel";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click_1);
-            // 
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Aquamarine;
-            this.panel5.Controls.Add(this.LblBackNote);
-            this.panel5.Location = new System.Drawing.Point(-1, 235);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(507, 31);
-            this.panel5.TabIndex = 14;
             // 
             // pictureBox2
             // 
@@ -855,10 +873,40 @@ namespace CARDMAKER
             this.pictureBox3.TabIndex = 2;
             this.pictureBox3.TabStop = false;
             // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel6.Location = new System.Drawing.Point(3, 398);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1158, 26);
+            this.panel6.TabIndex = 41;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(1164, 33);
+            this.panel7.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Beige;
+            this.label4.Location = new System.Drawing.Point(330, 4);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(155, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Preview Design";
+            // 
             // CardDesign
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.ClientSize = new System.Drawing.Size(1185, 402);
             this.Controls.Add(this.tabControl1);
             this.Name = "CardDesign";
@@ -881,13 +929,15 @@ namespace CARDMAKER
             this.panel2.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -965,5 +1015,8 @@ namespace CARDMAKER
         public System.Windows.Forms.TextBox TxtDesignName;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label4;
     }
 }

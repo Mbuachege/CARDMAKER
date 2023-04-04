@@ -33,7 +33,6 @@ namespace CARDMAKER
         string MOTTO;
         string LogoPath;
         string SignaturePath;
-        string BackgroundFrontPath;
         string BackgroundBackPath;
         string TitleColor;
         string FooterColor;

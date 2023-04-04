@@ -154,7 +154,7 @@ namespace CARDMAKER
 
 
                 Paragraph paragraph2 = new Paragraph(Email + " " + "P.O BOX:" + BOX + " " + Locationale).SetFont(NewRoman).SetFontSize(9).SetTextAlignment(TextAlignment.LEFT).SetMarginTop(0).SetWidth(myWidth).SetFixedPosition(2f, 115f, 243.5f).SetPadding(0);
-                paragraph2.SetFirstLineIndent(24);
+                paragraph2.SetFirstLineIndent(4);
                 document.Add(paragraph2);
 
                 Image img = new Image(iText.IO.Image.ImageDataFactory.Create(ImagePath));

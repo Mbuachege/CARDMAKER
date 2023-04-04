@@ -33,6 +33,7 @@ namespace CARDMAKER
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cARDDESIGNToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dESIGNLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iMPORTDATAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iNDIVIDUALCARDSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aDDNEWToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -41,8 +42,10 @@ namespace CARDMAKER
             this.vIEWLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.qRCODESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iMPORTEDFILENAMESToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -50,10 +53,7 @@ namespace CARDMAKER
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dESIGNLISTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -99,6 +99,13 @@ namespace CARDMAKER
             this.cARDDESIGNToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
             this.cARDDESIGNToolStripMenuItem.Text = "CARD DESIGN";
             this.cARDDESIGNToolStripMenuItem.Click += new System.EventHandler(this.cARDDESIGNToolStripMenuItem_Click);
+            // 
+            // dESIGNLISTToolStripMenuItem
+            // 
+            this.dESIGNLISTToolStripMenuItem.Name = "dESIGNLISTToolStripMenuItem";
+            this.dESIGNLISTToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.dESIGNLISTToolStripMenuItem.Text = "DESIGN LIST";
+            this.dESIGNLISTToolStripMenuItem.Click += new System.EventHandler(this.dESIGNLISTToolStripMenuItem_Click);
             // 
             // iMPORTDATAToolStripMenuItem
             // 
@@ -160,10 +167,20 @@ namespace CARDMAKER
             this.iMPORTEDFILENAMESToolStripMenuItem.Text = "IMPORTED FILENAMES";
             this.iMPORTEDFILENAMESToolStripMenuItem.Click += new System.EventHandler(this.iMPORTEDFILENAMESToolStripMenuItem_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Aqua;
+            this.panel1.Location = new System.Drawing.Point(145, 27);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1213, 622);
+            this.panel1.TabIndex = 11;
+            // 
             // toolStrip1
             // 
-            this.toolStrip1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.toolStrip1.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.toolStrip1.BackgroundImage = global::CARDMAKER.Properties.Resources.abstract_background_business_card_other_design_artworks_34720059;
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton1,
             this.toolStripButton5,
@@ -192,10 +209,21 @@ namespace CARDMAKER
             this.toolStripButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
+            // toolStripButton5
+            // 
+            this.toolStripButton5.Image = global::CARDMAKER.Properties.Resources.icons8_report_file_48;
+            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton5.Name = "toolStripButton5";
+            this.toolStripButton5.Size = new System.Drawing.Size(139, 67);
+            this.toolStripButton5.Text = "MULTIPLE CARDS";
+            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(139, 6);
             // 
             // toolStripButton4
             // 
@@ -203,7 +231,7 @@ namespace CARDMAKER
             this.toolStripButton4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(120, 67);
+            this.toolStripButton4.Size = new System.Drawing.Size(139, 67);
             this.toolStripButton4.Text = "CARD DESIGN";
             this.toolStripButton4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -211,7 +239,7 @@ namespace CARDMAKER
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(139, 6);
             // 
             // toolStripButton2
             // 
@@ -229,7 +257,7 @@ namespace CARDMAKER
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(120, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(139, 6);
             // 
             // toolStripButton3
             // 
@@ -237,7 +265,7 @@ namespace CARDMAKER
             this.toolStripButton3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(120, 67);
+            this.toolStripButton3.Size = new System.Drawing.Size(139, 67);
             this.toolStripButton3.Text = "GENERATE QRCODES";
             this.toolStripButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
@@ -245,43 +273,18 @@ namespace CARDMAKER
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(120, 6);
-            // 
-            // toolStripButton5
-            // 
-            this.toolStripButton5.Image = global::CARDMAKER.Properties.Resources.icons8_report_file_48;
-            this.toolStripButton5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(139, 67);
-            this.toolStripButton5.Text = "MULTIPLE CARDS";
-            this.toolStripButton5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(139, 6);
             // 
             // toolStripSeparator5
             // 
             this.toolStripSeparator5.Name = "toolStripSeparator5";
-            this.toolStripSeparator5.Size = new System.Drawing.Size(120, 6);
-            // 
-            // panel1
-            // 
-            this.panel1.Location = new System.Drawing.Point(145, 27);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1213, 622);
-            this.panel1.TabIndex = 11;
-            // 
-            // dESIGNLISTToolStripMenuItem
-            // 
-            this.dESIGNLISTToolStripMenuItem.Name = "dESIGNLISTToolStripMenuItem";
-            this.dESIGNLISTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.dESIGNLISTToolStripMenuItem.Text = "DESIGN LIST";
-            this.dESIGNLISTToolStripMenuItem.Click += new System.EventHandler(this.dESIGNLISTToolStripMenuItem_Click);
+            this.toolStripSeparator5.Size = new System.Drawing.Size(139, 6);
             // 
             // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(1370, 674);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.menuStrip1);

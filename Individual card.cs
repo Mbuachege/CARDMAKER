@@ -17,7 +17,11 @@ using iText.Layout.Properties;
 using System.IO;
 using iText.Kernel.Geom;
 using QRCoder;
-
+using iText.Kernel.Pdf.Canvas;
+using AForge.Video.DirectShow;
+using AForge.Video;
+using System.Drawing;
+using Image = iText.Layout.Element.Image;
 
 namespace CARDMAKER
 {
@@ -35,13 +39,15 @@ namespace CARDMAKER
         string MOTTO;
         string LogoPath;
         string SignaturePath;
-        string BackgroundFrontPath;
         string BackgroundBackPath;
         string TitleColor;
         string FooterColor;
         string BackNote;
         string QrCodepath;
         string outputFileName;
+        FilterInfoCollection FilterInfoCollection;
+        VideoCaptureDevice VideoCaptureDevice;
+        string qrnumber;
         private void button3_Click(object sender, EventArgs e)
         {
             OpenFileDialog open = new OpenFileDialog();
@@ -57,6 +63,7 @@ namespace CARDMAKER
         {
             try
             {
+               
                 if(TxtName.Text == ""|TxtPhoneNo.Text == ""| TxtRegNo.Text == ""|TxtForm.Text == ""| TxtExpiryDate.Text == ""| TxtImagepath.Text == "" )
                 {
                     MessageBox.Show("Please Fill all the Fields");
@@ -81,10 +88,12 @@ namespace CARDMAKER
                             string ExpiryDate = dataReader["ExpiryDate"].ToString();
                             string Imagepath = dataReader["ImagePath"].ToString();
                             string qrcodepath = dataReader["QrCodePath"].ToString();
+                           
 
                             PrintID(Name, RegNo, form, PhoneNo, ExpiryDate, Imagepath, qrcodepath);
 
                         }
+                     
                     }
 
                 }
@@ -131,6 +140,10 @@ namespace CARDMAKER
 
             var Strfile = @"E:\IDS\" + RegNo.ToString() + ".pdf";
 
+            var Texto = "JOSEPH MBUA CHEGE";
+            var idNo = "97654567899";
+            var Form = "FORM 4";
+            var Signature = "--------------------";
 
             using (PdfWriter writer = new PdfWriter(new FileStream(Strfile, FileMode.Create), new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
             {
@@ -151,6 +164,7 @@ namespace CARDMAKER
 
                 float opacity = 50;
                 //string imageFilePath = frontimage;
+
                 Image jpg = new Image(iText.IO.Image.ImageDataFactory.Create(frontimage));
                 //iText.Layout.Element.Image jpg = new iText.Layout.Element.Image(iText.IO.Image.ImageDataFactory.Create(imageFilePath));
                 jpg.ScaleToFit(242.64f, 153.36f).SetPadding(0);
@@ -160,16 +174,16 @@ namespace CARDMAKER
                 jpg.SetOpacity(opacity);
                 document.Add(jpg);
 
-                Color bgColour1 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
+                iText.Kernel.Colors.Color bgColour1 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
                 Paragraph paragraph1 = new Paragraph(Institution).SetFirstLineIndent(42).SetFont(NewRoman).SetFontSize(14).SetMarginLeft(0).SetMarginTop(0).SetBackgroundColor(bgColour1).SetWidth(myWidth).SetPaddingLeft(0).SetHeight(27f).SetPadding(0);
                 document.Add(paragraph1);
 
 
                 //var logo = @"C:\Users\ADMIN\Downloads\logo.png";
-                Image image = new Image(iText.IO.Image.ImageDataFactory.Create(LogoPath));
-                image.ScaleAbsolute(43f, 28f).SetPadding(0);
-                image.SetFixedPosition(1f, 126f).SetPadding(0);
-                document.Add(image);
+                Image image1 = new Image(iText.IO.Image.ImageDataFactory.Create(LogoPath));
+                image1.ScaleAbsolute(43f, 28f).SetPadding(0);
+                image1.SetFixedPosition(1f, 126f).SetPadding(0);
+                document.Add(image1);
 
 
                 Paragraph paragraph2 = new Paragraph(Email + " " + "P.O BOX:" + BOX + " " + Locationale).SetFont(NewRoman).SetFontSize(9).SetTextAlignment(TextAlignment.LEFT).SetMarginTop(0).SetWidth(myWidth).SetFixedPosition(2f, 115f, 243.5f).SetPadding(0);
@@ -209,7 +223,7 @@ namespace CARDMAKER
                 P1.SetWidth(myWidth);
                 P1.SetFontSize(11).SetPaddingTop(0).SetMarginBottom(0).SetMarginTop(18);
                 P1.SetTextAlignment(TextAlignment.JUSTIFIED_ALL);
-                Color bgColour = new DeviceRgb(System.Drawing.Color.FromName(FooterColor));
+                iText.Kernel.Colors.Color bgColour = new DeviceRgb(System.Drawing.Color.FromName(FooterColor));
                 P1.SetFontColor(ColorConstants.BLACK);
                 P1.SetBackgroundColor(bgColour);
                 P1.Add(MOTTO);
@@ -249,7 +263,7 @@ namespace CARDMAKER
                 para5.SetFontSize(8).SetMarginBottom(0).SetMarginTop(4);
                 document.Add(para5);
 
-                var signature = @"C:\Users\ADMIN\Downloads\sig.png";
+                //var signature = @"C:\Users\ADMIN\Downloads\sig.png";
                 Image signa = new Image(iText.IO.Image.ImageDataFactory.Create(SignaturePath));
                 signa.ScaleAbsolute(84f, 61f);
                 signa.SetFixedPosition(150f, 39f);
@@ -261,7 +275,7 @@ namespace CARDMAKER
                 para6.SetWidth(myWidth).SetHeight(24f);
                 para6.SetFontSize(11).SetPaddingTop(0).SetMarginBottom(0).SetMarginTop(19);
                 para6.SetTextAlignment(TextAlignment.JUSTIFIED_ALL);
-                Color bgColour2 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
+                iText.Kernel.Colors.Color bgColour2 = new DeviceRgb(System.Drawing.Color.FromName(TitleColor));
                 para6.SetFontColor(ColorConstants.BLACK);
                 para6.SetBackgroundColor(bgColour2);
                 para6.Add(MOTTO);
@@ -297,43 +311,47 @@ namespace CARDMAKER
         }
         private void savedata()
         {
+            
             string Namee = TxtName.Text;
             string RegNo = TxtRegNo.Text;
             QRCodeGenerator qr = new QRCodeGenerator();
             byte[] img = null;
-
-            QRCodeData qRCodeData = qr.CreateQrCode(Namee + RegNo, QRCodeGenerator.ECCLevel.Q);
+            Random rnd = new Random();
+            for (int j = 0; j < 1; j++)
+            {
+                qrnumber = rnd.Next().ToString();
+                QRCodeData qRCodeData = qr.CreateQrCode(qrnumber, QRCodeGenerator.ECCLevel.Q);
 
             QRCode Qcode = new QRCode(qRCodeData);
             using (System.Drawing.Bitmap bitmap = Qcode.GetGraphic(15))
             {
-                using (MemoryStream ms = new MemoryStream())
-                {
+                    using (MemoryStream ms = new MemoryStream())
+                    {
 
-                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
-                    System.Drawing.Color backColor = bitmap.GetPixel(0, 0);
-                    bitmap.MakeTransparent();
+                        bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                        System.Drawing.Color backColor = bitmap.GetPixel(0, 0);
+                        bitmap.MakeTransparent();
 
-                    img = new byte[ms.ToArray().Length];
-                    img = ms.ToArray();
+                        img = new byte[ms.ToArray().Length];
+                        img = ms.ToArray();
 
-                    outputFileName = @"C:\Users\ADMIN\Downloads\" + Namee + ".png";
+                        outputFileName = @"C:\Users\ADMIN\Downloads\" + qrnumber + ".png";
 
-                    FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite);
-                    bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    // memory.ToStream(fs) // I think the same
-                    byte[] bytes = ms.ToArray();
-                    fs.Write(bytes, 0, bytes.Length);
+                        FileStream fs = new FileStream(outputFileName, FileMode.Create, FileAccess.ReadWrite);
+                        bitmap.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                        // memory.ToStream(fs) // I think the same
+                        byte[] bytes = ms.ToArray();
+                        fs.Write(bytes, 0, bytes.Length);
 
-                   
+                    }
+
                 }
             }
 
-        
             using (SqlConnection sql = CONNECTION.CONN())
             {
-                string query = "INSERT INTO [dbo].[ImportData] ([Name],[RegNo],[Form],[PhoneNo],[ExpiryDate],[ImagePath],QrCodePath)" +
-                    " Values(@Name, @RegNo,@Form,@PhoneNo, @ExpiryDate, @ImagePath,@QrCodePath)";
+                string query = "INSERT INTO [dbo].[ImportData] ([Name],[RegNo],[Form],[PhoneNo],[ExpiryDate],[ImagePath],[QrCodePath],[QrCode])" +
+                    " Values(@Name, @RegNo,@Form,@PhoneNo, @ExpiryDate, @ImagePath,@QrCodePath, @QrCode)";
                 SqlCommand sqlCommand = new SqlCommand(query, sql);
 
                 sqlCommand.Parameters.AddWithValue("@Name", TxtName.Text.ToString());
@@ -341,8 +359,23 @@ namespace CARDMAKER
                 sqlCommand.Parameters.AddWithValue("@Form", TxtForm.Text.ToString());
                 sqlCommand.Parameters.AddWithValue("@PhoneNo", TxtPhoneNo.Text.ToString());
                 sqlCommand.Parameters.AddWithValue("@ExpiryDate", TxtExpiryDate.Text.ToString());
-                sqlCommand.Parameters.AddWithValue("@ImagePath", TxtImagepath.Text.ToString());
+                if(checkBox1.Checked ==true)
+                {
+                    MemoryStream ms2 = new MemoryStream();
+                    pictureBox2.Image.Save(ms2, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    byte[] img_arr2 = new byte[ms2.Length];
+                    ms2.Read(img_arr2, 0, img_arr2.Length);
+                    sqlCommand.Parameters.AddWithValue("@image", img_arr2);
+
+                }
+                else
+                {
+                    string Imagepath = TxtImagepath.Text;
+                    sqlCommand.Parameters.AddWithValue("@ImagePath", TxtImagepath.Text.ToString());
+                }
+               
                 sqlCommand.Parameters.AddWithValue("@QrCodePath", outputFileName);
+                sqlCommand.Parameters.AddWithValue("@QrCode", qrnumber);
 
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Successful Saved");
@@ -352,31 +385,19 @@ namespace CARDMAKER
         private void Individual_card_Load(object sender, EventArgs e)
         {
             ChooseDesign();
+            //panel1.BackColor = System.Drawing.Color.FromArgb(100, 0, 0, 0);
+
+            FilterInfoCollection = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            foreach (FilterInfo filterInfo in FilterInfoCollection)
+                comboBox1.Items.Add(filterInfo.Name);
+
+            comboBox1.SelectedIndex = 0;
+            VideoCaptureDevice = new VideoCaptureDevice();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            using (SqlConnection sqlConnection = CONNECTION.CONN())
-            {
-                string SQL = "SELECT * FROM [dbo].[ImportData] where [RegNo] = '" + TxtRegNo.Text.ToString() + "'";
-                SqlCommand cmd = new SqlCommand(SQL, sqlConnection);
-                SqlDataReader dataReader = cmd.ExecuteReader();
-
-                while (dataReader.Read())
-                {
-                    string Name = dataReader["Name"].ToString();
-                    string RegNo = dataReader["RegNo"].ToString();
-                    string form = dataReader["Form"].ToString();
-                    string PhoneNo = dataReader["PhoneNo"].ToString();
-                    string ExpiryDate = dataReader["ExpiryDate"].ToString();
-                    string Imagepath = dataReader["ImagePath"].ToString();
-                    string qrcodepath = dataReader["QrCodePath"].ToString();
-
-                    PrintID(Name, RegNo, form, PhoneNo, ExpiryDate, Imagepath, qrcodepath);
-
-                }
-
-            }
+           
         }
 
         private void TxtPhoneNo_KeyPress(object sender, KeyPressEventArgs e)
@@ -392,6 +413,64 @@ namespace CARDMAKER
             if (!char.IsControl(e.KeyChar) && !char.IsLetter(e.KeyChar) && !char.IsWhiteSpace(e.KeyChar))
             {
                 e.Handled = true;
+            }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked == false)
+            {
+                comboBox1.Enabled = false;
+                TxtImagepath.Enabled = true;
+                button3.Enabled = true;
+                button4.Enabled = false;
+                button5.Enabled = false;
+
+            }
+            else
+            {
+                comboBox1.Enabled = true;
+                pictureBox1.Enabled = true;
+                pictureBox2.Enabled = true;
+                button4.Enabled = true;
+                button5.Enabled = true;
+                button3.Enabled = false;
+                TxtImagepath.Enabled = false;
+            }
+
+        }
+        private void VideoCaptureDevice_NewFrame(object sender, NewFrameEventArgs eventArgs)
+        {
+            pictureBox1.Image = (Bitmap)eventArgs.Frame.Clone();
+            pictureBox1.BackColor = System.Drawing.Color.Transparent;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                VideoCaptureDevice = new VideoCaptureDevice(FilterInfoCollection[comboBox1.SelectedIndex].MonikerString);
+                VideoCaptureDevice.NewFrame += VideoCaptureDevice_NewFrame;
+                VideoCaptureDevice.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (VideoCaptureDevice.IsRunning == true)
+                {
+                    VideoCaptureDevice.Stop();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

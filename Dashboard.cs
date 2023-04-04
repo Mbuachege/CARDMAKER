@@ -60,6 +60,9 @@ namespace CARDMAKER
             panel1.Tag = childform;
             childform.BringToFront();
             childform.Show();
+            
+        
+
         }
 
         private void cARDDESIGNToolStripMenuItem_Click(object sender, EventArgs e)
@@ -120,9 +123,9 @@ namespace CARDMAKER
 
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
-            Form1 form1 = new Form1();
-            form1.Show();
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
 
         private void qRCODESToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +141,7 @@ namespace CARDMAKER
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
             openchildform(new Individual_card());
+            panel1.BackColor = Color.FromArgb(130, 0, 0, 0);
         }
 
         private void toolStripButton5_Click(object sender, EventArgs e)

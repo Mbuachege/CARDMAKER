@@ -136,6 +136,7 @@ namespace CARDMAKER
             this.chart2.Size = new System.Drawing.Size(429, 300);
             this.chart2.TabIndex = 1;
             this.chart2.Text = "chart2";
+            this.chart2.Click += new System.EventHandler(this.chart2_Click);
             // 
             // designsBindingSource
             // 

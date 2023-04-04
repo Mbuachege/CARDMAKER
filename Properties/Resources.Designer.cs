@@ -103,6 +103,16 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3844432_magnifier_search_zoom_icon1 {
+            get {
+                object obj = ResourceManager.GetObject("3844432_magnifier_search_zoom_icon1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _800_8005015_login_to_client_dashboard_youtube_round_icon_blue {
             get {
                 object obj = ResourceManager.GetObject("800-8005015_login-to-client-dashboard-youtube-round-icon-blue", resourceCulture);
@@ -133,6 +143,16 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap abstract_background_business_card_other_design_artworks_34720059 {
+            get {
+                object obj = ResourceManager.GetObject("abstract-background-business-card-other-design-artworks-34720059", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap add_insert_blue_icon_symbol_download_png_116396096809b8kzdrvvr {
             get {
                 object obj = ResourceManager.GetObject("add-insert-blue-icon-symbol-download-png-116396096809b8kzdrvvr", resourceCulture);
@@ -146,6 +166,16 @@ namespace CARDMAKER.Properties {
         internal static System.Drawing.Bitmap chegembuaQR {
             get {
                 object obj = ResourceManager.GetObject("chegembuaQR", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Daco_4892798 {
+            get {
+                object obj = ResourceManager.GetObject("Daco_4892798", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -203,9 +233,29 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_back_arrow_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-back-arrow-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_business_report_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8-business-report-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_home_page_48 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-home-page-48", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -293,6 +343,40 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_payment_card_electronics_learning_management_system_institute_of_chartered_accountants_of_india_grey_identity_card_electronics_payment_credit_card_thumbnail {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-payment-card-electronics-learning-management-system-institute-of-" +
+                        "chartered-accountants-of-india-grey-identity-card-electronics-payment-credit-car" +
+                        "d-thumbnail", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap png_transparent_payment_card_electronics_learning_management_system_institute_of_chartered_accountants_of_india_grey_identity_card_electronics_payment_credit_card_thumbnail1 {
+            get {
+                object obj = ResourceManager.GetObject("png-transparent-payment-card-electronics-learning-management-system-institute-of-" +
+                        "chartered-accountants-of-india-grey-identity-card-electronics-payment-credit-car" +
+                        "d-thumbnail1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pngtree_corporate_and_business_id_card_design_template_image_521402 {
+            get {
+                object obj = ResourceManager.GetObject("pngtree-corporate-and-business-id-card-design-template-image_521402", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap qr2 {
             get {
                 object obj = ResourceManager.GetObject("qr2", resourceCulture);
@@ -313,9 +397,29 @@ namespace CARDMAKER.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap SeekPng_com_yellow_circle_png_9601714 {
+            get {
+                object obj = ResourceManager.GetObject("SeekPng.com_yellow-circle-png_9601714", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap sig {
             get {
                 object obj = ResourceManager.GetObject("sig", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap yyi {
+            get {
+                object obj = ResourceManager.GetObject("yyi", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
